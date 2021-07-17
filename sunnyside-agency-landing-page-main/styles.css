@@ -21,6 +21,13 @@
   --header-font-family: "Fraunces", sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-size: 1.125rem;
+  width: 100%;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -38,20 +45,24 @@
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  font-size: 1.125rem;
+p {
+  font-family: var(--paragraph-font-family);
+  color: var(--Grayish-blue);
+  text-align: center;
+  line-height: 1.8rem;
+  max-width: 55ch;
 }
-
-h1 {
+.header-title {
+  width: 100%;
   color: hsl(0, 0%, 100%);
   font-family: var(--header-font-family);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 7px;
+  letter-spacing: 5px;
+  line-height: 10vh;
   text-align: center;
-  font-size: 3rem;
-  margin-top: 5rem;
+  font-size: calc(2rem + 1vw);
+  margin-top: 3em;
 }
 
 h2 {
@@ -61,7 +72,17 @@ h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
+  max-width: 15ch;
+  width: 100%;
 }
+header {
+  background-image: url(./images/mobile/image-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
 .textBox {
   display: flex;
   flex-direction: column;
@@ -69,11 +90,10 @@ h2 {
   align-items: center;
   max-width: 100%;
   padding: 3.5rem 0 3.5rem 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.textBox p {
-  width: 75%;
-}
 .textBox a {
   color: var(--Very-dark-desaturated-blue);
   font-family: var(--header-font-family);
@@ -81,6 +101,7 @@ h2 {
   text-align: center;
   margin-top: 2rem;
   width: 150px;
+  max-width: 100%;
   position: relative;
   text-transform: uppercase;
 }
@@ -97,7 +118,7 @@ h2 {
   opacity: 0.3;
 }
 
-.textBox > a:hover::before {
+.textBox > a:hover::after {
   opacity: 1;
 }
 
@@ -105,29 +126,84 @@ h2 {
   border-bottom: 8px solid var(--Soft-red);
 }
 
-p {
-  font-family: var(--paragraph-font-family);
-  color: var(--Grayish-blue);
-  text-align: center;
-  line-height: 1.8rem;
+.navigationContainer {
+  margin: 0 0.5em;
 }
 
-header {
-  background-image: url(./images/mobile/image-header.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 1rem 1.5rem 30rem 0;
-  width: 100%;
+.mobile-menu {
+  position: absolute;
+  background-color: white;
+  left: 0;
+  right: 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3em;
+  clip-path: polygon(
+    88% 15%,
+    100% 0,
+    100% 42%,
+    100% 100%,
+    68% 100%,
+    32% 100%,
+    0 100%,
+    0% 43%,
+    0 15%
+  );
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-out;
+  z-index: 2;
 }
 
-.logo-wrapper {
-  margin-left: 2rem;
-}
 .navigationContainer {
   display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-self: flex-end;
+  flex-grow: 1;
+  padding: 0.5em 1em;
+}
+.logo-wrapper {
+  margin-right: auto;
+}
+.hamburger-box {
+  margin-left: auto;
+}
+
+.mobile-menu.fade {
+  opacity: 0;
+}
+
+.mobile-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  padding-bottom: 1em;
+}
+
+.mobile-content a {
+  margin-top: 1em;
+  font-family: var(--paragraph-font-family);
+  color: var(--Grayish-blue);
+}
+.mobile-content a:nth-of-type(4) {
+  color: black;
+  font-family: var(--header-font-family);
+  text-transform: uppercase;
+  font-weight: 900;
+  background-color: var(--Yellow);
+  padding: 1em;
+  border-radius: 3em;
+}
+
+.mobile-content a:hover:nth-of-type(4) {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .navbar-right ul li a:hover {
@@ -162,12 +238,9 @@ li {
 }
 
 .headerText {
-  margin-top: 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  line-height: 15vh;
-  text-align: center;
 }
 
 .eggContainer,
@@ -203,9 +276,6 @@ li {
   align-items: center;
   justify-content: flex-end;
   padding: 5rem 0 5rem 0;
-}
-.textWrapper p {
-  width: 50%;
 }
 
 .orangeBg {
@@ -248,7 +318,7 @@ h3 {
 .clientBoxes p {
   color: var(--Dark-grayish-blue);
   margin-bottom: 15px;
-  width: 110%;
+  width: 100%;
 }
 .clientImg {
   display: block;
@@ -257,11 +327,7 @@ h3 {
   max-width: 100px;
 }
 
-.clientBoxes p:nth-last-of-type(1) {
-  color: var(--Grayish-blue);
-}
-
-.clientBoxes p:nth-last-of-type(2) {
+.clientBoxes p:nth-of-type(2) {
   color: var(--Very-dark-desaturated-blue);
   font-family: var(--header-font-family);
   margin-bottom: 5px;
@@ -273,6 +339,17 @@ h3 {
   gap: 0;
   margin: 0;
 }
+
+/* Alternative to using grid  */
+
+/* .pictureWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pictureWrapper > * {
+  flex: 1 1 10em;
+} */
 .pictureBox img {
   width: 100%;
   height: 100%;
@@ -280,7 +357,8 @@ h3 {
 
 footer {
   background-color: var(--Dark-moderate-cyan);
-  padding: 3rem;
+  padding: 3em 0;
+  width: 100%;
 }
 
 .footerWrapper {
@@ -288,24 +366,29 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .logoContainer {
   margin-bottom: 30px;
 }
-
-.logoContainer img {
-  min-width: 12rem;
+.informationContainer {
+  width: 100%;
+  margin-right: 25px;
 }
 
 .informationContainer ul {
+  width: 100%;
   display: flex;
-  gap: 3rem;
+  justify-content: center;
+  gap: 1.5rem;
   margin-bottom: 50px;
-  margin-right: 30px;
 }
+
 .iconsContainer ul {
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  gap: 1.5em;
+  margin-right: 2em;
 }
 
 footer a {
@@ -314,7 +397,7 @@ footer a {
 }
 
 /* Media queries to change images to deskptop versions */
-@media (min-width: 700px) {
+@media (min-width: 750px) {
   header {
     background-image: url("images/desktop/image-header.jpg");
     height: 1000px;
@@ -331,7 +414,7 @@ footer a {
 
 /* Layout Queries */
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .pictureWrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -363,7 +446,28 @@ footer a {
   .navbar-right {
     display: block;
   }
-  .mobileNav {
-    display: None;
+  .mobile-icon {
+    display: none;
+  }
+  .mobile-menu {
+    opacity: 0;
+  }
+}
+
+/* Animations for the arrow in the header */
+
+#arrowDown {
+  animation: moveDownUp 2s linear infinite;
+  position: relative;
+  margin-left: -25px;
+}
+
+@keyframes moveDownUp {
+  0%,
+  100% {
+    top: -1.5em;
+  }
+  50% {
+    top: 5em;
   }
 }

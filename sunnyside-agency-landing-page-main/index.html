@@ -22,11 +22,13 @@
         <div class="logo-wrapper">
           <img id="logo" src="images/logo.svg" alt="logo" />
         </div>
-        <img
-          class="mobileNav"
-          src="images/icon-hamburger.svg"
-          alt="hamburger"
-        />
+        <div class="hamburger-box">
+          <img
+            class="mobile-icon"
+            src="images/icon-hamburger.svg"
+            alt="hamburger"
+          />
+        </div>
         <div class="navbar-right">
           <nav>
             <ul>
@@ -38,16 +40,26 @@
           </nav>
         </div>
       </div>
+      <div class="mobile-menu">
+        <div class="mobile-content">
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
       <div class="headerText">
-        <h1>We are creatives</h1>
-        <img id="arrowDown" src="./images/icon-arrow-down.svg" />
+        <h1 class="header-title">We are creatives</h1>
+        <a href="#redirect"
+          ><img id="arrowDown" src="./images/icon-arrow-down.svg"
+        /></a>
       </div>
     </header>
 
     <main>
       <div class="container">
         <div class="eggContainer"></div>
-        <div class="textBox brandBox">
+        <div class="textBox brandBox" id="redirect">
           <h2>Transform your brand</h2>
           <p>
             We are a full-service creative agency specializing in helping brands
@@ -198,5 +210,6 @@
         >. Coded by <a href="#">Edison Zapata Velez</a>.
       </div>
     </footer>
+    <script src="menu.js"></script>
   </body>
 </html>
