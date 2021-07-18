@@ -131,6 +131,7 @@ header {
 }
 
 .mobile-menu {
+  visibility: hidden;
   position: absolute;
   background-color: white;
   left: 0;
@@ -150,12 +151,12 @@ header {
     0% 43%,
     0 15%
   );
-  opacity: 1;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.4s ease-out;
+  opacity: 0;
+  -webkit-transition: all 1.2s ease-in-out;
+  -moz-transition: all 1.2s ease-in-out;
+  -ms-transition: all 1.2s ease-in-out;
+  -o-transition: all 1.2s ease-in-out;
+  transition: all 1.2s ease-out;
   z-index: 2;
 }
 
@@ -173,7 +174,8 @@ header {
 }
 
 .mobile-menu.fade {
-  opacity: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-content {
@@ -449,8 +451,9 @@ footer a {
   .mobile-icon {
     display: none;
   }
-  .mobile-menu {
+  .mobile-menu.fade {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
