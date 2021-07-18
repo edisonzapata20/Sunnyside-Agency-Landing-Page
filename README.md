@@ -20,4 +20,6 @@ Solution was done utilizing CSS and HTML mostly, with a little of Javascript to 
 
 ## Site hosting
 
-You can find the site here:
+You can find the site in Github Pages:
+
+https://edisonzapata20.github.io/Sunnyside-Agency-Landing-Page/
